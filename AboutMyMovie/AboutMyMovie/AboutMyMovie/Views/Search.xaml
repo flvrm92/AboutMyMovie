@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AboutMyMovie.Views.Search">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="10">
+            <Entry Placeholder="Name" VerticalOptions="Center" Text="{Binding NameToSearch}"></Entry>
+
+            <Button Text="Search" Command="{Binding SearchMovieCommand}" BorderColor="#007ACC" BackgroundColor="#007ACC" TextColor="White"></Button>
+            
+            <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="LightGray" />
+
+            <Label VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding ErrorMessage}" IsVisible="{Binding IsErrorMessageVisible}"/>
+
+            <ScrollView>
+                <Grid Padding="10" RowSpacing="10" IsVisible="{Binding IsGridVisible}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Name: " Grid.Row="0" Grid.Column="0" FontSize="Medium"></Label>
+                    <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="1" FontSize="Medium"></Label>
+
+                    <Label Text="Year: " Grid.Row="1" Grid.Column="0" FontSize="Medium"></Label>
+                    <Label Text="{Binding Year}" Grid.Row="1" Grid.Column="1" FontSize="Medium"></Label>
+
+                    <Label Text="Released: " Grid.Row="2" Grid.Column="0" FontSize="Medium"></Label>
+                    <Label Text="{Binding Released}" Grid.Row="2" Grid.Column="1" FontSize="Medium"></Label>
+
+                    <Label Text="Genre: " Grid.Row="3" Grid.Column="0" FontSize="Medium"></Label>
+                    <Label Text="{Binding Genre}" Grid.Row="3" Grid.Column="1" FontSize="Medium"></Label>
+
+                    <Label Text="Director: " Grid.Row="4" Grid.Column="0" FontSize="Medium"></Label>
+                    <Label Text="{Binding Director}" Grid.Row="4" Grid.Column="1" FontSize="Medium"></Label>
+                    
+                </Grid>
+            </ScrollView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
